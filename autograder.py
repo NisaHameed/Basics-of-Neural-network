@@ -2078,20 +2078,20 @@ TEST_batchnorm = (
     TEST_batchnorm_dLdZ)
 
 SCORE_LOGS = {
-    "Linear Layer": 15 * int(TEST_linear),
-    "Activation": 10 * int(TEST_activations),
-    "MLP0": 10 * int(TEST_mlp0),
-    "MLP1": 10 * int(TEST_mlp1),
-    "MLP4": 15 * int(TEST_mlp4),
-    "Loss": 10 * int(TEST_loss),
-    "SGD": 10 * int(TEST_sgd),
-    "Batch Norm": 20 * int(TEST_batchnorm)
+    "Linear Layer": 100 * int(TEST_linear),
+    "Activation": 100 * int(TEST_activations),
+    "MLP0": 100 * int(TEST_mlp0),
+    "MLP1": 100 * int(TEST_mlp1),
+    "MLP4": 100 * int(TEST_mlp4),
+    "Loss": 100 * int(TEST_loss),
+    "SGD": 100 * int(TEST_sgd),
+    "Batch Norm": 100 * int(TEST_batchnorm)
 }
 
 
 print("\n")
-print("TEST   | STATUS | POINTS | DESCRIPTION")
-print("───────┼────────┼────────┼────────────────────────────────")
+print("TEST   | STATUS | SCORE  | DESCRIPTION")
+print("───────┼────────┼────────|────────────────────────────────")
 
 for i, (key, value) in enumerate(SCORE_LOGS.items()):
 
@@ -2107,10 +2107,4 @@ for i, (key, value) in enumerate(SCORE_LOGS.items()):
 
 print("\n")
 
-"""
-────────────────────────────────────────────────────────────────────────────────────
-## FINAL AUTOLAB SCORES
-────────────────────────────────────────────────────────────────────────────────────
-"""
 
-print(json.dumps({'scores': SCORE_LOGS}))
